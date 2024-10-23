@@ -33,6 +33,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.47)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       eslint:
         specifier: ^9.7.0
         version: 9.13.0(jiti@1.21.6)
@@ -45,6 +48,9 @@ importers:
       globals:
         specifier: ^15.0.0
         version: 15.11.0
+      paneforge:
+        specifier: ^0.0.6
+        version: 0.0.6(svelte@5.0.5)
       prettier:
         specifier: ^3.3.2
         version: 3.3.3
@@ -60,6 +66,15 @@ importers:
       svelte-check:
         specifier: ^4.0.0
         version: 4.0.5(svelte@5.0.5)(typescript@5.6.3)
+      svelte-radix:
+        specifier: ^1.1.1
+        version: 1.1.1(svelte@5.0.5)
+      tailwind-merge:
+        specifier: ^2.5.4
+        version: 2.5.4
+      tailwind-variants:
+        specifier: ^0.2.1
+        version: 0.2.1(tailwindcss@3.4.14)
       tailwindcss:
         specifier: ^3.4.9
         version: 3.4.14
@@ -838,6 +853,10 @@ packages:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
 
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
+
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -1357,6 +1376,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@5.0.7:
+    resolution: {integrity: sha512-oLxFY2gd2IqnjcYyOXD8XGCftpGtZP2AbHbOkthDkvRywH5ayNtPVy9YlOPcHckXzbLTCHpkb7FB+yuxKV13pQ==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -1403,6 +1427,11 @@ packages:
 
   pako@1.0.11:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
+
+  paneforge@0.0.6:
+    resolution: {integrity: sha512-jYeN/wdREihja5c6nK3S5jritDQ+EbCqC5NrDo97qCZzZ9GkmEcN5C0ZCjF4nmhBwkDKr6tLIgz4QUKWxLXjAw==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0-next.1
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -1717,9 +1746,23 @@ packages:
       svelte:
         optional: true
 
+  svelte-radix@1.1.1:
+    resolution: {integrity: sha512-TCbV7fzlJ2aEUB0nu2EodVA+r1eYj526IYpmGUTV32Z0bIrCUvx3K8xX3tcxR5dDFA5ZBU1Hxr4RYC4TDFEQ4A==}
+    peerDependencies:
+      svelte: ^3.54.0 || ^4.0.0 || ^5.0.0 || ^5.0.0-next.1
+
   svelte@5.0.5:
     resolution: {integrity: sha512-f4WBlP5g8W6pEoDfx741lewMlemy+LIGpEqjGPWqnHVP92wqlQXl87U5O5Bi2tkSUrO95OxOoqwU8qlqiHmFKA==}
     engines: {node: '>=18'}
+
+  tailwind-merge@2.5.4:
+    resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
+
+  tailwind-variants@0.2.1:
+    resolution: {integrity: sha512-2xmhAf4UIc3PijOUcJPA1LP4AbxhpcHuHM2C26xM0k81r0maAO6uoUSHl3APmvHZcY5cZCY/bYuJdfFa4eGoaw==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
+    peerDependencies:
+      tailwindcss: '*'
 
   tailwindcss@3.4.14:
     resolution: {integrity: sha512-IcSvOcTRcUtQQ7ILQL5quRDg7Xs93PdJEk1ZLbhhvJc7uj/OAhYOnruEiwnGgBvUtaUAJ8/mhSw1o8L2jCiENA==}
@@ -2709,6 +2752,8 @@ snapshots:
 
   clean-stack@2.2.0: {}
 
+  clsx@2.1.1: {}
+
   color-convert@2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -3190,6 +3235,8 @@ snapshots:
 
   nanoid@3.3.7: {}
 
+  nanoid@5.0.7: {}
+
   natural-compare@1.4.0: {}
 
   node-releases@2.0.18: {}
@@ -3239,6 +3286,11 @@ snapshots:
   package-json-from-dist@1.0.1: {}
 
   pako@1.0.11: {}
+
+  paneforge@0.0.6(svelte@5.0.5):
+    dependencies:
+      nanoid: 5.0.7
+      svelte: 5.0.5
 
   parent-module@1.0.1:
     dependencies:
@@ -3488,6 +3540,10 @@ snapshots:
     optionalDependencies:
       svelte: 5.0.5
 
+  svelte-radix@1.1.1(svelte@5.0.5):
+    dependencies:
+      svelte: 5.0.5
+
   svelte@5.0.5:
     dependencies:
       '@ampproject/remapping': 2.3.0
@@ -3503,6 +3559,13 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.12
       zimmerframe: 1.1.2
+
+  tailwind-merge@2.5.4: {}
+
+  tailwind-variants@0.2.1(tailwindcss@3.4.14):
+    dependencies:
+      tailwind-merge: 2.5.4
+      tailwindcss: 3.4.14
 
   tailwindcss@3.4.14:
     dependencies:

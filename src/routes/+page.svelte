@@ -1,19 +1,25 @@
 <script lang="ts">
-	import type { AvailableLanguageTag } from '$lib/paraglide/runtime';
-	import { i18n } from '$lib/i18n';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
-	import * as m from '$lib/paraglide/messages.js';
+	import * as Resizable from '$lib/components/ui/resizable';
+	import type { PaneGroupAPI } from 'paneforge';
 
-	function switchToLanguage(newLanguage: AvailableLanguageTag) {
-		const canonicalPath = i18n.route($page.url.pathname);
-		const localisedPath = i18n.resolveRoute(canonicalPath, newLanguage);
-		goto(localisedPath);
-	}
+	let paneGroup: PaneGroupAPI;
 </script>
 
-<h1>{m.hello_world()}</h1>
-<div>
-	<button onclick={() => switchToLanguage('en')}>english</button>
-	<button onclick={() => switchToLanguage('ko')}>한국어</button>
-</div>
+<Resizable.PaneGroup direction="horizontal" class="h-full w-full rounded-lg border" bind:paneGroup>
+	<Resizable.Pane defaultSize={50}>
+		<div class="flex h-full items-center justify-center p-6">
+			<span class="font-semibold">Code Editor</span>
+		</div>
+	</Resizable.Pane>
+	<Resizable.Handle
+		withHandle
+		ondblclick={() => {
+			paneGroup.setLayout([50, 50]);
+		}}
+	/>
+	<Resizable.Pane defaultSize={50}>
+		<div class="flex h-full items-center justify-center p-6">
+			<span class="font-semibold">Content</span>
+		</div>
+	</Resizable.Pane>
+</Resizable.PaneGroup>
